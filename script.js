@@ -1,9 +1,9 @@
 // Product data
 const products = [
-    { id: 1, name: 'Toor Daal', category: 'daal', pricePerKg: 150, image: 'Images/toor-dal.jpg' },
-    { id: 2, name: 'Arhar Daal', category: 'daal', pricePerKg: 140, image: 'Images/arhar-dal.jpg' },
-    { id: 3, name: 'Nimadi Daal', category: 'daal', pricePerKg: 140, image: 'Images/Nimadi-toor-dal.webp' },
-    { id: 3, name: 'Moong Daal', category: 'daal', pricePerKg: 120, image: 'Images/moong-dal.jpg' },
+    { id: 1, name: 'Toor Daal', category: 'daal', pricePerKg: 150, image: 'https://sonikrish920-rgb.github.io/krish-notes/Images/toor-dal.jpg' },
+    { id: 2, name: 'Arhar Daal', category: 'daal', pricePerKg: 140, image: 'https://sonikrish920-rgb.github.io/krish-notes/Images/arhar-dal.jpg' },
+    { id: 3, name: 'Nimadi Daal', category: 'daal', pricePerKg: 140, image: 'https://sonikrish920-rgb.github.io/krish-notes/Images/Nimadi-toor-dal.webp' },
+    { id: 3, name: 'Moong Daal', category: 'daal', pricePerKg: 120, image: 'https://sonikrish920-rgb.github.io/krish-notes/Images/moong-dal.jpg' },
     { id: 4, name: 'Masoor Daal', category: 'daal', pricePerKg: 100, image: 'Images/masoor-daal.jpg' },
     { id: 5, name: 'Chana Daal', category: 'daal', pricePerKg: 100, image: 'Images/chana-daal.jpg' },
     { id: 6, name: 'Kali-Urad Daal', category: 'daal', pricePerKg: 120, image: 'Images/kali-urad-daal.webp' },
