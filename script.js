@@ -1,6 +1,6 @@
 // Product data
 const products = [
-    { id: 1, name: 'Toor Daal', category: 'daal', pricePerKg: 150, image: 'images/toor-dal.jpg' },
+    { id: 1, name: 'Toor Daal', category: 'daal', pricePerKg: 150, image: 'https://sonikrish920-rgb.github.io/sonitraders/images/toor-dal.jpg' },
     { id: 2, name: 'Arhar Daal', category: 'daal', pricePerKg: 140, image: 'images/arhar-dal.jpg' },
     { id: 3, name: 'Nimadi Daal', category: 'daal', pricePerKg: 140, image: 'images/Nimadi-toor-dal.webp' },
     { id: 3, name: 'Moong Daal', category: 'daal', pricePerKg: 120, image: 'images/moong-dal.jpg' },
