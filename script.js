@@ -71,6 +71,8 @@ function renderProducts() {
                         <option value="0.5">500g</option>
                         <option value="1" selected>1kg</option>
                         <option value="5">5kg</option>
+                        <option value="10">10kg</option>
+                        <option value="30">30kg</option>
                     </select>
                 </div>
                 <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
