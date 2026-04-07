@@ -234,7 +234,7 @@ checkoutForm.addEventListener('submit', (e) => {
 
     orderSummary += `\nTotal: ₹${total}\n\nCash on Delivery`;
 
-    const whatsappUrl = `https://wa.me/919131916875?text=${encodeURIComponent(orderSummary)}`;
+    const whatsappUrl = `https://wa.me/919009412418?text=${encodeURIComponent(orderSummary)}`;
     window.open(whatsappUrl, '_blank');
 
     // Clear cart
