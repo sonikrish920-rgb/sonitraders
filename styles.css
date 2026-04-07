@@ -75,12 +75,12 @@ header h1 {
     background: linear-gradient(135deg, #4CAF50 0%, #FFC107 100%);
     color: white;
     text-align: center;
-    padding: 3rem 0;
+    padding: 1rem 0;
 }
 
 #banner h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 0rem;
 }
 
 #banner p {
