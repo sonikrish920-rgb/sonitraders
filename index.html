@@ -8,18 +8,21 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <b><h1>SONI TRADERS</h1></b>
-            <div class="header-controls">
-                <input type="text" id="search" placeholder="Search products...">
-                <div class="cart-icon" id="cart-icon">
-                    <span>🛒</span>
-                    <span id="cart-count">0</span>
-                </div>
+    <div class="container header-flex">
+        
+        <h1 class="logo">Soni Traders🌾</h1>
+
+        <div class="header-controls">
+            <input type="text" id="search" placeholder="🔍 Search products...">
+            
+            <div class="cart-icon" id="cart-icon">
+                🛒
+                <span id="cart-count">0</span>
             </div>
         </div>
-    </header>
 
+    </div>
+</header>
     <section id="banner">
         <div class="container">
             <h2>Fresh Daal & Chawal at Best Prices</h2>
@@ -62,6 +65,9 @@
     </section>
 
     <div id="cart-panel" class="cart-panel">
+        <p style="text-align:center;font-size:13px;color:#555;">
+Step 1: Add items 🛒 → Step 2: Checkout → Step 3: WhatsApp confirm
+</p>
         <div class="cart-header">
             <h3>Your Cart</h3>
             <button id="close-cart">×</button>
@@ -73,8 +79,8 @@
             <p>Total: ₹<span id="cart-total">0</span></p>
             <button id="checkout-btn">Checkout</button>
         </div>
-        <p style="text-align:center;font-size:14px;">
-After submitting, WhatsApp will open to confirm your order 📲
+        <p style="text-align:center;font-size:14px;font-weight:bold;color:green;">
+👉 Checkout karein → WhatsApp par order confirm karein 📲
 </p>
     </div>
 
