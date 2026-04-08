@@ -188,14 +188,28 @@ function saveCart() {
 }
 
 // Cart panel toggle
+// Open cart
 cartIcon.addEventListener('click', () => {
-    cartPanel.classList.toggle('open');
+    cartPanel.classList.add('open');
+    document.body.classList.add("cart-open");
 });
 
+// Close button
 closeCart.addEventListener('click', () => {
     cartPanel.classList.remove('open');
+    document.body.classList.remove("cart-open");
 });
 
+// Click outside → close cart
+document.addEventListener("click", function (e) {
+    if (
+        !cartPanel.contains(e.target) &&
+        !cartIcon.contains(e.target)
+    ) {
+        cartPanel.classList.remove("open");
+        document.body.classList.remove("cart-open");
+    }
+});
 // Checkout
 checkoutBtn.addEventListener('click', () => {
     if (cart.length === 0) {
@@ -204,6 +218,7 @@ checkoutBtn.addEventListener('click', () => {
     }
     checkoutModal.style.display = 'block';
     cartPanel.classList.remove('open');
+    document.body.classList.remove("cart-open"); 
 });
 
 closeModal.addEventListener('click', () => {
