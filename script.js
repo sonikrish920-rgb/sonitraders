@@ -176,6 +176,7 @@ const productById = new Map(products.map(product => [product.id, product]));
 const productGrid = document.getElementById('product-grid');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const searchInput = document.getElementById('search');
+const themeToggle = document.getElementById('theme-toggle');
 const cartIcon = document.getElementById('cart-icon');
 const cartPanel = document.getElementById('cart-panel');
 const cartBackdrop = document.getElementById('cart-backdrop');
@@ -197,6 +198,33 @@ document.getElementById('whatsapp-link').href = `https://wa.me/${WHATSAPP_NUMBER
 document.getElementById('call-link').href = `tel:${BUSINESS_PHONE}`;
 document.getElementById('footer-phone').href = `tel:${BUSINESS_PHONE}`;
 document.getElementById('footer-phone').textContent = BUSINESS_PHONE;
+
+function setTheme(theme, persist = false) {
+    const selectedTheme = theme === 'dark' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = selectedTheme;
+    themeToggle.setAttribute('aria-pressed', String(selectedTheme === 'dark'));
+    themeToggle.setAttribute(
+        'aria-label',
+        selectedTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+    );
+    document.querySelector('meta[name="theme-color"]').content =
+        selectedTheme === 'dark' ? '#14221a' : '#245b3a';
+
+    if (persist) {
+        try {
+            localStorage.setItem('theme', selectedTheme);
+        } catch (error) {
+            console.error('Unable to save the selected theme.', error);
+            showStatus('Your theme changed, but this browser could not save the preference.');
+        }
+    }
+}
+
+setTheme(document.documentElement.dataset.theme);
+themeToggle.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme, true);
+});
 
 renderProducts();
 updateCartDisplay();

@@ -6,6 +6,17 @@
     <meta name="theme-color" content="#245b3a">
     <meta name="description" content="Shop quality daal, rice, poha, sabudana, and grains from Soni Traders in Indore. Order online through WhatsApp.">
     <title>Soni Traders | Quality Groceries in Indore</title>
+    <script>
+        try {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || savedTheme === 'light') {
+                document.documentElement.dataset.theme = savedTheme;
+            }
+        } catch (error) {
+            console.error('Unable to read the saved theme.', error);
+            document.documentElement.dataset.theme = 'light';
+        }
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,6 +26,10 @@
             <div class="header-controls">
                 <label class="visually-hidden" for="search">Search products</label>
                 <input type="search" id="search" placeholder="Search groceries..." autocomplete="off">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                    <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+                    <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+                </button>
                 <button class="cart-icon" id="cart-icon" type="button" aria-label="Open cart, 0 items" aria-controls="cart-panel" aria-expanded="false">
                     <span aria-hidden="true">🛒</span>
                     <span id="cart-count" aria-hidden="true">0</span>
