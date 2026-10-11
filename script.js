@@ -2,8 +2,8 @@ const WHATSAPP_NUMBER = '919009412418';
 const BUSINESS_PHONE = '9009412418';
 
 const products = [
-    { id: 1, name: 'Toor Daal', category: 'daal', pricePerKg: 150, image: 'Images/toor-dal.jpg' },
-    { id: 2, name: 'Arhar Daal', category: 'daal', pricePerKg: 140, image: 'Images/arhar-dal.jpg' },
+    { id: 1, name: 'Toor Daal', category: 'daal', pricePerKg: 160, image: 'Images/toor-dal.jpg' },
+    { id: 2, name: 'Arhar Daal', category: 'daal', pricePerKg: 150, image: 'Images/arhar-dal.jpg' },
     { id: 3, name: 'Nimadi Daal', category: 'daal', pricePerKg: 140, image: 'Images/Nimadi-toor-dal.webp' },
     { id: 4, name: 'Moong Daal', category: 'daal', pricePerKg: 120, image: 'Images/moong-dal.jpg' },
     { id: 5, name: 'Masoor Daal', category: 'daal', pricePerKg: 100, image: 'Images/masoor-daal.jpg' },
@@ -17,14 +17,13 @@ const products = [
     { id: 13, name: 'Tukdi Rice', category: 'rice', pricePerKg: 60, image: 'Images/tukdi-rice.avif' },
     { id: 14, name: 'Sabudana', category: 'dana', pricePerKg: 80, image: 'Images/sabudana.jpg' },
     { id: 15, name: 'Mungfali Dana', category: 'dana', pricePerKg: 160, image: 'Images/Mungfali-dana.jpg' },
-    { id: 16, name: 'Poha', category: 'poha', pricePerKg: 70, image: 'Images/poha.jpg' },
+    { id: 16, name: 'Poha', category: 'poha', pricePerKg: 80, image: 'Images/poha.jpg' },
     { id: 17, name: 'Khada Moong', category: 'anaj', pricePerKg: 120, image: 'Images/khada-moong.webp' },
     { id: 18, name: 'Moth', category: 'anaj', pricePerKg: 120, image: 'Images/moth.jpg' },
     { id: 19, name: 'Chawli', category: 'anaj', pricePerKg: 120, image: 'Images/chawli.jpeg' },
-    { id: 20, name: 'Kabuli Chana', category: 'anaj', pricePerKg: 130, image: 'Images/kabuli-chana.jpg' },
+    { id: 20, name: 'Kabuli Chana', category: 'anaj', pricePerKg: 140, image: 'Images/kabuli-chana.jpg' },
     { id: 21, name: 'Desi Chana', category: 'anaj', pricePerKg: 100, image: 'Images/desi-chana.jpg' }
 ];
-
 const productAliases = new Map([
     [1, ['tur', 'toor dal', 'tur dal', 'pigeon pea']],
     [2, ['arhar dal', 'tur dal', 'pigeon pea']],
