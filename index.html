@@ -3,124 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soni Traders - Fresh Daal & Chawal</title>
+    <meta name="theme-color" content="#245b3a">
+    <meta name="description" content="Shop quality daal, rice, poha, sabudana, and grains from Soni Traders in Indore. Order online through WhatsApp.">
+    <title>Soni Traders | Quality Groceries in Indore</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-    <div class="container header-flex">
-        
-        <h1 class="logo">Soni Traders🌾</h1>
-
-        <div class="header-controls">
-            <input type="text" id="search" placeholder="🔍 Search products...">
-            
-            <div class="cart-icon" id="cart-icon">
-                🛒
-                <span id="cart-count">0</span>
+    <header class="site-header">
+        <div class="container header-flex">
+            <a class="logo" href="./" aria-label="Soni Traders home">Soni Traders <span aria-hidden="true">🌾</span></a>
+            <div class="header-controls">
+                <label class="visually-hidden" for="search">Search products</label>
+                <input type="search" id="search" placeholder="Search groceries..." autocomplete="off">
+                <button class="cart-icon" id="cart-icon" type="button" aria-label="Open cart, 0 items" aria-controls="cart-panel" aria-expanded="false">
+                    <span aria-hidden="true">🛒</span>
+                    <span id="cart-count" aria-hidden="true">0</span>
+                </button>
             </div>
         </div>
+    </header>
 
-    </div>
-</header>
-    <section id="banner">
-        <div class="container">
-            <h2>Fresh Daal & Chawal at Best Prices</h2>
-            <p>Quality you can trust, prices you'll love</p>
-            <div style="text-align:center; margin:15px 0;">
-    <div 
-    style="
-    display:inline-block;
-    background:#111110;
-    padding:10px 20px;
-    font-weight:bold;
-    color: rgb(255, 251, 0);
-    border-radius:50px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    cursor:pointer;
-    "
-    onmouseover="this.style.background='#222'; this.style.transform='scale(1.05)'"
-    onmouseout="this.style.background='#111110'; this.style.transform='scale(1)'"
-    >
-    🛒 Easy Order: Add to Cart → Checkout → WhatsApp 📲
-    </div>
-</div>
-    </section>
-
-    <section id="products">
-        <div class="container">
-            <div class="filters">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="daal">Daal</button>
-                <button class="filter-btn" data-category="rice">Rice</button>
-                <button class="filter-btn" data-category="dana">Dana</button>
-                <button class="filter-btn" data-category="anaj">KadhaAnaj</button>
-                <button class="filter-btn" data-category="poha">Poha</button>
+    <main>
+        <section id="banner" aria-labelledby="banner-title">
+            <div class="container banner-content">
+                <p class="eyebrow">Your neighborhood grocery store</p>
+                <h1 id="banner-title">Fresh Daal &amp; Chawal at Best Prices</h1>
+                <p>Quality you can trust, prices you'll love</p>
+                <span class="order-hint">🛒 Add to cart <span aria-hidden="true">→</span> Checkout <span aria-hidden="true">→</span> Confirm on WhatsApp</span>
             </div>
-            <div id="product-grid" class="product-grid">
-                <!-- Products will be loaded here -->
+        </section>
+
+        <section id="products" class="container" aria-labelledby="products-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Fresh picks for your pantry</p>
+                    <h2 id="products-title">Shop our groceries</h2>
+                </div>
+            </div>
+            <nav class="filters" aria-label="Filter products by category">
+                <button class="filter-btn active" type="button" data-category="all" aria-pressed="true">All products</button>
+                <button class="filter-btn" type="button" data-category="daal" aria-pressed="false">Daal</button>
+                <button class="filter-btn" type="button" data-category="rice" aria-pressed="false">Rice</button>
+                <button class="filter-btn" type="button" data-category="dana" aria-pressed="false">Dana</button>
+                <button class="filter-btn" type="button" data-category="anaj" aria-pressed="false">Other grains</button>
+                <button class="filter-btn" type="button" data-category="poha" aria-pressed="false">Poha</button>
+            </nav>
+            <p id="app-status" class="status-message" role="status" aria-live="polite" hidden></p>
+            <div id="product-grid" class="product-grid" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <button id="cart-backdrop" class="cart-backdrop" type="button" aria-label="Close cart" tabindex="-1"></button>
+    <aside id="cart-panel" class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" inert>
+        <div class="cart-top">
+            <p class="cart-step">Review your items before checkout</p>
+            <div class="cart-header">
+                <h2 id="cart-title">Your cart</h2>
+                <button id="close-cart" class="icon-button" type="button" aria-label="Close cart">×</button>
             </div>
         </div>
-    </section>
-
-    <div id="cart-panel" class="cart-panel">
-        <p style="text-align:center;font-size:13px;color:#555;">
-Step 1: Add items 🛒 → Step 2: Checkout → Step 3: WhatsApp confirm
-</p>
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button id="close-cart">×</button>
-        </div>
-        <div id="cart-items" class="cart-items">
-            <!-- Cart items -->
-        </div>
+        <div id="cart-items" class="cart-items"></div>
         <div class="cart-footer">
-            <p>Total: ₹<span id="cart-total">0</span></p>
-            <button id="checkout-btn">Checkout</button>
+            <p class="cart-total">Total <span id="cart-total">₹0</span></p>
+            <button id="checkout-btn" class="primary-button" type="button">Continue to checkout</button>
+            <p class="delivery-note">Cash on delivery · Indore local delivery</p>
         </div>
-        <p style="text-align:center;font-size:14px;font-weight:bold;color:green;">
-👉 Checkout karein → WhatsApp par order confirm karein 📲
-</p>
-    </div>
-    
-    <div id="checkout-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Checkout</h3>
+    </aside>
+
+    <div id="checkout-modal" class="modal" aria-hidden="true">
+        <section class="modal-content" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+            <button id="close-checkout" class="icon-button modal-close" type="button" aria-label="Close checkout">×</button>
+            <p class="eyebrow">Almost there</p>
+            <h2 id="checkout-title">Delivery details</h2>
+            <p class="modal-intro">Share your details and we'll prepare your order in WhatsApp.</p>
             <form id="checkout-form">
-                <input type="text" id="customer-name" placeholder="Your Name" required>
-                <input type="tel" id="customer-phone" placeholder="Phone Number" required>
-                <textarea id="customer-address" placeholder="Delivery Address" required></textarea>
-                <button type="submit">Place Order</button>
+                <label for="customer-name">Your name</label>
+                <input type="text" id="customer-name" name="name" placeholder="e.g. Priya Sharma" autocomplete="name" required>
+                <label for="customer-phone">Phone number</label>
+                <input type="tel" id="customer-phone" name="phone" placeholder="10-digit Indian mobile number" autocomplete="tel" inputmode="tel" pattern="(\+?91 ?)?[6-9][0-9]{9}" maxlength="14" title="Enter a valid 10-digit Indian mobile number, optionally with +91." required>
+                <label for="customer-address">Delivery address</label>
+                <textarea id="customer-address" name="address" placeholder="House number, street, area, Indore" autocomplete="street-address" required></textarea>
+                <button class="primary-button" type="submit">Continue on WhatsApp</button>
             </form>
-            <p>Cash on Delivery Available</p>
-            <p>Delivery Area: Indore local delivery</p>
-        </div>
+            <p class="delivery-note">Cash on delivery · Delivery within Indore</p>
+        </section>
     </div>
 
-    <div class="whatsapp-float">
-        <a href="https://wa.me/919009412418" target="_blank">💬 WhatsApp</a>
+    <div class="floating-actions">
+        <a id="whatsapp-link" class="whatsapp-float" href="https://wa.me/919009412418" target="_blank" rel="noopener noreferrer" aria-label="Contact Soni Traders on WhatsApp">WhatsApp <span aria-hidden="true">↗</span></a>
+        <a id="call-link" class="call-now" href="tel:9009412418" aria-label="Call Soni Traders">Call us <span aria-hidden="true">↗</span></a>
     </div>
 
-    <div class="call-now">
-        <a href="tel:9009412418">📞 Call Now</a>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h4>Soni Traders</h4>
-                <p>Address: Govind Colony, Indore</p>
-                <p>Phone: 9009412418</p>
-                <p>Business Hours: 9AM – 6PM</p>
-                <p>✔ Trusted Local Shop</p>
-                <p>✔ Cash on Delivery Available</p>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div>
+                <a class="footer-logo" href="./">Soni Traders <span aria-hidden="true">🌾</span></a>
+                <p>Your trusted neighborhood grocery store in Indore.</p>
+            </div>
+            <div class="footer-details">
+                <p>Govind Colony, Indore, Madhya Pradesh</p>
+                <p>Phone: <a id="footer-phone" href="tel:9009412418">9009412418</a></p>
+                <p>Business hours: 9 AM–6 PM</p>
+                <p>Cash on delivery available · Local delivery in Indore</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    
 </body>
 </html>
