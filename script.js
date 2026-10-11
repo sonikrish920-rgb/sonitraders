@@ -17,7 +17,7 @@ const products = [
     { id: 13, name: 'Tukdi Rice', category: 'rice', pricePerKg: 60, image: 'Images/tukdi-rice.avif' },
     { id: 14, name: 'Sabudana', category: 'dana', pricePerKg: 80, image: 'Images/sabudana.jpg' },
     { id: 15, name: 'Mungfali Dana', category: 'dana', pricePerKg: 160, image: 'Images/Mungfali-dana.jpg' },
-    { id: 16, name: 'Poha', category: 'poha', pricePerKg: 80, image: 'Images/poha.jpg' },
+    { id: 16, name: 'Poha', category: 'poha', pricePerKg: 90, image: 'Images/poha.jpg' },
     { id: 17, name: 'Khada Moong', category: 'anaj', pricePerKg: 120, image: 'Images/khada-moong.webp' },
     { id: 18, name: 'Moth', category: 'anaj', pricePerKg: 120, image: 'Images/moth.jpg' },
     { id: 19, name: 'Chawli', category: 'anaj', pricePerKg: 120, image: 'Images/chawli.jpeg' },
