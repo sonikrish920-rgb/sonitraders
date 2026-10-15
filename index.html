@@ -44,7 +44,20 @@
                 <p class="eyebrow">Your neighborhood grocery store</p>
                 <h1 id="banner-title">Fresh Daal &amp; Chawal at Best Prices</h1>
                 <p>Quality you can trust, prices you'll love</p>
-                <span class="order-hint">🛒 Add to cart <span aria-hidden="true">→</span> Checkout <span aria-hidden="true">→</span> Confirm on WhatsApp</span>
+                <div class="banner-actions">
+                    <span class="order-hint">🛒 Add to cart <span aria-hidden="true">→</span> Checkout <span aria-hidden="true">→</span> Confirm on WhatsApp</span>
+                    <span class="order-help-prompt">
+                        <button id="order-help-link" class="order-help-link" type="button" aria-haspopup="dialog" aria-controls="order-help-dialog">
+                            <span class="order-help-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" focusable="false">
+                                    <path d="M8 5.8v12.4L18 12 8 5.8Z" fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <span>Order kaise karein?</span>
+                        </button>
+                        <span class="order-help-hand" aria-hidden="true">👈🏻</span>
+                    </span>
+                </div>
             </div>
         </section>
 
@@ -67,6 +80,18 @@
             <div id="product-grid" class="product-grid" aria-live="polite"></div>
         </section>
     </main>
+
+    <dialog id="order-help-dialog" class="order-help-dialog" aria-labelledby="order-help-title" aria-describedby="order-help-description">
+        <div class="order-help-header">
+            <div>
+                <p class="eyebrow">Quick ordering guide</p>
+                <h2 id="order-help-title">How to place your order</h2>
+            </div>
+            <button id="close-order-help" class="icon-button" type="button" aria-label="Close order help">×</button>
+        </div>
+        <p id="order-help-description" class="order-help-description">Press play to see how to choose products and confirm your order on WhatsApp.</p>
+        <div id="order-help-player" class="order-help-player"></div>
+    </dialog>
 
     <button id="cart-backdrop" class="cart-backdrop" type="button" aria-label="Close cart" tabindex="-1"></button>
     <aside id="cart-panel" class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" inert>

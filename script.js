@@ -186,6 +186,10 @@ const checkoutButton = document.getElementById('checkout-btn');
 const checkoutModal = document.getElementById('checkout-modal');
 const checkoutForm = document.getElementById('checkout-form');
 const appStatus = document.getElementById('app-status');
+const orderHelpLink = document.getElementById('order-help-link');
+const orderHelpDialog = document.getElementById('order-help-dialog');
+const orderHelpClose = document.getElementById('close-order-help');
+const orderHelpPlayer = document.getElementById('order-help-player');
 
 let currentFilter = 'all';
 let searchTerm = '';
@@ -227,6 +231,30 @@ themeToggle.addEventListener('click', () => {
 
 renderProducts();
 updateCartDisplay();
+
+orderHelpLink.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/SP9hEAox3HY?autoplay=0&rel=0';
+    iframe.title = 'Soni Traders order-help video';
+    iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allowFullscreen = true;
+    iframe.addEventListener('load', () => {
+        if (orderHelpDialog.open) orderHelpClose.focus();
+    }, { once: true });
+    orderHelpPlayer.replaceChildren(iframe);
+    orderHelpDialog.showModal();
+    orderHelpClose.focus();
+});
+
+orderHelpClose.addEventListener('click', () => orderHelpDialog.close());
+orderHelpDialog.addEventListener('click', event => {
+    if (event.target === orderHelpDialog) orderHelpDialog.close();
+});
+orderHelpDialog.addEventListener('close', () => {
+    orderHelpPlayer.replaceChildren();
+    orderHelpLink.focus();
+});
 
 function showStatus(message) {
     appStatus.textContent = message;

@@ -25,8 +25,13 @@ Soni Traders is a family-run grocery business in Indore, Madhya Pradesh, India. 
 - 🧺 Update quantities, remove items, and see the calculated total.
 - 💾 Keep cart contents between visits with browser `localStorage`.
 - 📲 Enter delivery details and open a pre-filled WhatsApp order message.
+- ▶️ Open the order-help video from the homepage; the YouTube player loads only when requested.
 - 🖼️ Load product photos from the local `Images/` folder, with a fallback if an image is unavailable.
 - 📱 Use a responsive layout on desktop, tablet, and mobile.
+
+### Order-help video
+
+The compact green play button labeled **“Order kaise karein?”** appears in the homepage banner alongside the ordering hint. On desktop, both actions share a centered Flexbox row with vertical alignment; on small screens they stack with consistent spacing. A separate, non-clickable `👈🏻` hand immediately to the help button's right is vertically centered and gently moves side to side; its movement is disabled when `prefers-reduced-motion` is enabled. The button opens an accessible, responsive modal with the unlisted YouTube video `SP9hEAox3HY`. The iframe is created only after the visitor clicks the button; no video iframe, thumbnail, or player is loaded on initial page load. Playback does not start automatically. Closing the dialog with its close button, Escape, or the backdrop removes the iframe and returns keyboard focus to the help button.
 
 ## 🛠️ Tech Stack
 
